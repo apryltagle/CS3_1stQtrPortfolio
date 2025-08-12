@@ -3,11 +3,19 @@
 <body>
     <h2>How many more games can you still play?</h2>
     <script>
-        age = 15
-        maxage = 40
-        numberPerDay = 1
+        
+        let age = prompt("Enter your age")
+        let maxage = prompt("Enter your max age")
+        let numberPerDay = prompt("How many per day?")
+                
         total = numberPerDay * 365 * (maxage - age)
-        document.write("You will play a total of " + total + " more games in your life")
+        if (confirm("Do you want to proceed?")){
+            document.write("You will play a total of " + total + " more games in your life")
+  
+        }
+            else {
+                alert("Run the code again")
+            }
     </script>
 </body>
 </html>
