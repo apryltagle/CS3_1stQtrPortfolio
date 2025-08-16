@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <h1>Q1 3rd Graded Exercise submitted by Apryl Emmanoelle P. Tagle from 9Rubidium </h1>
+
+                <script>
+                    function totalMeal(){
+                    
+                    let mp = parseFloat(document.getElementById("mp").value);
+                    let tip = parseFloat(document.getElementById("tip").value);
+                    let sc = parseFloat(document.getElementById("sc").value);
+
+                    let totalCost = mp + tip + (sc / 100 * mp);
+
+                    document.getElementById("result").innerText = "Total meal: " + totalCost.toFixed(2);
+                    }
+                
+            </script>
+
+
+            <form>
+                <label for = "mp" > Meal price: </label>
+                <input type = "text" id ="mp" placeholder = " "><br>
+                <label for = "Tip" > Tip: </label>
+                <input type = "text" id = "tip" placeholder = " "><br>
+                <label for = "sc" > Service Charge: </label>
+                <input type = "text" id = "sc" placeholder = " "><br>
+                
+                <input type = "button" value = "Accept input" onclick = "totalMeal()">
+
+            </form>
+            <p id = "result"> Total meal: </p>
+
+
+            <!-- W3Schools.com. (n.d.). https://www.w3schools.com/jsref/jsref_tofixed.asp
+             W3Schools.com. (n.d.-b). https://www.w3schools.com/jsref/event_onclick.asp -->
+
+
+
+    </head>
+    <body>
+
+    </body>
+</html>
