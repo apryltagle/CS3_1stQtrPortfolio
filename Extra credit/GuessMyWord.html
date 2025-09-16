@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap" rel="stylesheet" rel="stylesheet">
+    <style>
+        header{
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            color: white;
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 25px #fff
+        }
+        body {
+            background-image: url('HuGGeENt6kGyixe3hT9tnY.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover; 
+            background-attachment: fixed;
+            text-align:  center;
+            font-family: 'Raleway', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+
+        }
+
+
+        .my-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(3px);
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 500px;
+        padding: 70px 50px;
+        margin: 20px;
+        border: 1px;
+        border-radius: 50px;
+    }
+
+        header div{
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(3px);
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 500px;
+        padding: 10px 50px;
+        margin: 20px;
+        border: 1px;
+        border-radius: 50px;
+    }
+
+        button {
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        color: white;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 16px;
+        padding: 10px 10px;
+        margin: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+}
+
+        button:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+}
+
+    button:active {
+        transform: translateY(0);
+    }
+
+    #wordDisplay {
+        font-size: 40px;
+        font-family: 'Audiowide', sans-serif;
+    }
+
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+    <h1>Guess My Word</h1>
+    </div>
+    </header>
+    <div class="my-box">
+<p id="wordDisplay"></p>
+<input type="text" id="guessInput" maxlength="1"><br>
+<button onclick="makeGuess()">Guess</button>
+<p id="message"></p>
+
+</div>
+
+
+<script>
+  let secretWord = ["x", "c", "a", "t", "t", "e", "r", "x", "e", "l"];
+  let guessedWord = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"];
+
+  document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+
+  function makeGuess() {
+    let guess = document.getElementById("guessInput").value.toLowerCase();
+    let correct = false;
+
+    for (let i = 0; i < secretWord.length; i++) {
+      if (secretWord[i] === guess) {
+        guessedWord[i] = guess;
+        correct = true;
+      }
+    }
+
+    
+    document.getElementById("wordDisplay").textContent = guessedWord.join(" ");
+    document.getElementById("message").textContent = correct ? "Wow >_<" : "?? Try again";
+    document.getElementById("guessInput").value = "";
+  }
+</script>
+
+
+
+</body>>
+</html>
